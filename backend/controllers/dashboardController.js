@@ -17,7 +17,7 @@ export const getDashboardData = async (req, res) => {
 
         const totalExpense = await Expense.aggregate([
             { $match: { userId: userObjectId } },
-            { $group: { _id: null, total: { $sum: "$amount " } } }
+            { $group: { _id: null, total: { $sum: "$amount" } } }
         ]);
         console.log("Total expense", {totalExpense, userId: isValidObjectId(userId)});
 
