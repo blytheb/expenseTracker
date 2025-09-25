@@ -86,7 +86,7 @@ const HomePage = () => {
           <FinanceOverview
             totalBalance= {dashboardData?.totalBalance || 0}
             totalIncome={dashboardData?.totalIncome || 0}
-            totalExpense= {dashboardData?.totalExpenses || 0}
+            totalExpense= {dashboardData?.totalExpense || 0}
           />
 
           <ExpenseTransactions
@@ -96,17 +96,17 @@ const HomePage = () => {
 
           <Last30DaysExpenses
             data={dashboardData?.last30DaysExpenses?.transactions || []}
-            />
+          />
 
-            <RecentIncomeWithChart
-            data={dashboardData?.last60DaysIncome?.transactions?.slice(0,4) || []}
-            totalIncome={dashboardData?.totalIncome || 0}
-            />
+          <RecentIncomeWithChart
+          data={dashboardData?.last60DaysIncome?.transactions?.slice(0,4) || []}
+          totalIncome={dashboardData?.totalIncome || 0}
+          />
 
-            <RecentIncome
-              transactions={dashboardData?.last60DaysIncome?.transactions}
-              onSeeMore={()=> navigate("/income")}
-            />
+          <RecentIncome
+            transactions={dashboardData?.last60DaysIncome?.transactions}
+            onSeeMore={()=> navigate("/income")}
+          />
 
         </div>
       </div>

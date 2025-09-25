@@ -10,7 +10,6 @@ import {
     ResponsiveContainer,
     Cell,
 } from "recharts";
-import CustomTooltip from './CustomTooltip';
 
 const CustomBarChart = ({data}) => {
 
@@ -38,7 +37,7 @@ const CustomBarChart = ({data}) => {
         <ResponsiveContainer width="100%" height={300}>
             <BarChart data={data}>
                 <CartesianGrid stroke='none' />
-                <XAxis dataKey="month" tick={{ fontSize:12, fill: "#555" }} stroke='none' />
+                <XAxis dataKey="month" tick={{ fontSize: 12, fill: "#555" }} stroke='none' />
                 <YAxis tick={{ fontSize: 12, fill: "#555" }} stroke='none' />
 
                 <Tooltip content={CustomTooltip} />
@@ -46,11 +45,11 @@ const CustomBarChart = ({data}) => {
                 <Bar
                     dataKey="amount"
                     fill="#FF8042"
-                    radius={[10,10,0,0]}
+                    radius={[10, 10, 0, 0 ]}
                     activeDot = {{ r:8, fill: "yellow"}}
                     activeStyle={{fill: "green"}}
                 >
-                    {data.map((entry,index) => (
+                    {data.map((entry, index) => (
                         <Cell key={index} fill={getBarColor(index)} />
                     ))}
                 </Bar>
